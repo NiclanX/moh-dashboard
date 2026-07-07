@@ -69,6 +69,7 @@ function LogIn() {
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                 />
+                <Link to={'/j'}>Forgot Password?</Link>
                 <input type="submit" value={submitting ? 'Logging in . . . ' : 'Log In'} disabled={submitting}/>
 
             <p>

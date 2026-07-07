@@ -1,48 +1,42 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
-import { useContext } from 'react';
-import { sessionContext } from '../services/useGetSession';
-import { useNavigate } from 'react-router-dom';
-import useGetThisUser from '../services/useGetThisUser';
-import TopBar from './TopBar';
-import SideBar from './SideBar';
+import useGetThisUser from '../services/useGetThisUser'
 
 function Dashboard() {
 
+  const navigate = useNavigate()
   const { thisUser, loading } = useGetThisUser()
 
-  
-
-
-  const { user } = useContext(sessionContext)
-  const navigate = useNavigate()
-
-  if (loading) return <h1>Loading ... </h1>
-
-  if (!user) {
-    navigate('/login')
+  if (loading) {
+    return <h1>Loading...</h1>
   }
 
-  async function signout() {
+  async function signOut() {
     const { error } = await supabase.auth.signOut()
 
-    if (error) return console.error(`This is the error: ${error}`);
-   
+    if (error) {
+      console.error(error)
+      return
+    }
 
     navigate('/login')
-
   }
 
-
-
-
+  if (loading || !thisUser) {
+  return <h1>Loading...</h1>
+}
 
   return (
     <>
-    <div className="placeholder">
-      <h1>Hi {thisUser?.name}, welcome back</h1>
-      <button onClick={()=>signout()}>Sign Out</button>
-    </div>
+      <div className="placeholder">
+        <h1>Hi {thisUser.name}, welcome back</h1>
+        <h2>User ID</h2>
+        <p>{thisUser.id}</p>
+
+        <button onClick={signOut}>
+          Sign Out
+        </button>
+      </div>
     </>
   )
 }
