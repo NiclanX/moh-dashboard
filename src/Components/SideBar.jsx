@@ -1,30 +1,27 @@
 import React from 'react'
 import useGetThisUser from '../services/useGetThisUser'
 import supabase from '../services/Supabase';
+import ListItem from './ListItem';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function SideBar({thisUser}) {  
 
-    async function signout() {
-    const { error } = await supabase.auth.signOut()
+    const navigate = useNavigate()
 
-    if (error) return console.error(`This is the error: ${error}`);
-   
-
-    navigate('/login')
-
-  }
+    
 
 
   return (
     <>
-    <h2>Hi {thisUser.name}</h2>
+    <h3>Hi {thisUser?.name} welcome back</h3>
 
     <ul className='side-list'>
-        <li>Dashboard</li>
-        <li>User Management</li>
-        <li>Something</li>
-        <li>Something</li>
+        <ListItem name={'Dashboard'} to={'/'}/>
+        <ListItem name={'User Management'} to={'/login'}/>
+        <ListItem name={'Application Review'} to={'/'}/>
+
     </ul>
 
     <button onClick={()=> {

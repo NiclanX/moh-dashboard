@@ -23,20 +23,26 @@ function Dashboard() {
     navigate('/login')
   }
 
+  async function signout() {
+    const { error } = await supabase.auth.signOut()
+
+    if (error) return console.error(`This is the error: ${error}`);
+   
+
+    navigate('/login')
+
+  }
+
 
 
 
 
   return (
     <>
-      <div className="dashboard">
-        <div className="side">
-          <SideBar thisUser={thisUser}/>
-        </div>
-        <div className="main">
-          hello
-        </div>
-      </div>
+    <div className="placeholder">
+      <h1>Hi {thisUser?.name}, welcome back</h1>
+      <button onClick={()=>signout()}>Sign Out</button>
+    </div>
     </>
   )
 }
