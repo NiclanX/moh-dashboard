@@ -3,17 +3,19 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import { sessionContext } from '../services/useGetSession'
 import { useForm } from "react-hook-form"
+import { ToastContainer, toast } from 'react-toastify';
 
 function SignUp() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 
+  const notify = (message)=> {
+    toast.error(message)
+  }
+
   const { user, loading } = useContext(sessionContext)
 
   const navigate = useNavigate()
-
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
 
 
   if (loading) {
@@ -30,7 +32,8 @@ function SignUp() {
  async function onSubmit(formData) {
 
   if (formData.password !== formData.Confirmpassword) {
-    console.log("Passwords do not match")
+    const message = "Passwords do not match";
+    notify(message)
     return
   }
 
@@ -47,6 +50,7 @@ function SignUp() {
   })
 
   if (error) {
+    notify(error.message)
     console.log(error.message)
     return
   }
@@ -127,8 +131,13 @@ function SignUp() {
         Already have an account? <Link to="/login">Log In</Link>
       </p>
 </form>
+<ToastContainer
+  autoClose={1500}
+  position='bottom-right'
+/>
 
     </>
+
   )
 }
 

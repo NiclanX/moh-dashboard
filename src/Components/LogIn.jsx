@@ -2,10 +2,17 @@ import { useContext, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import { sessionContext } from '../services/useGetSession'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function LogIn() {
 
+    const notify = (message) => {
+        toast.error(message)
+    }
+
     const { user, loading } = useContext(sessionContext)
+    const [submitting, setSubmitting] = useState(false)
 
     const navigate = useNavigate()
 
@@ -23,6 +30,7 @@ function LogIn() {
 
 
     async function handleLogin(e) {
+        setSubmitting(true)
 
         e.preventDefault()
 
@@ -33,8 +41,12 @@ function LogIn() {
 
         if (error) {
             console.log(`The error is ${error.message}`)
+            setSubmitting(false)
+            notify(error.message);
             return
         }
+
+        setSubmitting(false)
 
         navigate("/")
     }
@@ -44,7 +56,7 @@ function LogIn() {
         <>
             <form onSubmit={handleLogin}>
                 <h1>Log In</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aliquid?</p>
+               
                 <input
                     type="email"
                     placeholder="Email"
@@ -57,12 +69,15 @@ function LogIn() {
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                 />
-                <input type="submit" value="Log In" />
+                <input type="submit" value={submitting ? 'Logging in . . . ' : 'Log In'} disabled={submitting}/>
 
             <p>
                 Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
             </form>
+            <ToastContainer
+                autoClose= {2000}
+            />
 
         </>
     )
