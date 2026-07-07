@@ -1,51 +1,75 @@
-import React from 'react'
-import { Link } from 'react-router'
+import { useContext, useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
-import { useState } from 'react'
-
-
+import { sessionContext } from '../services/useGetSession'
 
 function LogIn() {
-    const [user, setUser] = useState(null)
 
-    async function handlelogin(email, password) {
-        
-        const {data, error} = await supabase.auth.signInWithPassword({
-            email: email,
-            password: password
+    const { user, loading } = useContext(sessionContext)
+
+    const navigate = useNavigate()
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (user) {
+        return <Navigate to="/" replace />
+    }
+
+
+    async function handleLogin(e) {
+
+        e.preventDefault()
+
+        const { error } = await supabase.auth.signInWithPassword({
+            email,
+            password
         })
 
         if (error) {
-            console.log(`The error is ${error}`)
+            console.log(`The error is ${error.message}`)
             return
         }
 
-         setUser(data)    
-         console.log(data.user) 
-
-        
-
+        navigate("/")
     }
-
-    const [Email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
- 
 
 
     return (
         <>
-            <form onSubmit={(e)=>{
-                e.preventDefault()
-                handlelogin(Email,password)
-            }}>
+            <form onSubmit={handleLogin}>
                 <h1>Log In</h1>
-                <input type="text" name="" id="" placeholder='Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}}/>
+
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                />
+
                 <br />
-                <input type="password" name="" id="" placeholder='Password' value={password} onChange={(e)=> setPassword(e.target.value)} />
+
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
+
                 <br />
+
                 <input type="submit" value="Log In" />
+
             </form>
-            <p>Don't have an account? {<Link to="/signup">Sign Up</Link>} </p>
+
+            <p>
+                Don't have an account? <Link to="/signup">Sign Up</Link>
+            </p>
         </>
     )
 }

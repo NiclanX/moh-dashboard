@@ -9,6 +9,10 @@ function Dashboard() {
   const {user} = useContext(sessionContext)
   const navigate = useNavigate()
 
+  if (!user) {
+    navigate('/login')
+  }
+
 async function signout() {
   const {error} = await supabase.auth.signOut()
 

@@ -10,7 +10,6 @@ import SessionProvider from './services/useGetSession.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <SessionProvider>
-
       <App />
     </SessionProvider>
 
