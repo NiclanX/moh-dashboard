@@ -44,32 +44,26 @@ function LogIn() {
         <>
             <form onSubmit={handleLogin}>
                 <h1>Log In</h1>
-
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aliquid?</p>
                 <input
                     type="email"
                     placeholder="Email"
                     value={email}
                     onChange={(e)=>setEmail(e.target.value)}
                 />
-
-                <br />
-
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                 />
-
-                <br />
-
                 <input type="submit" value="Log In" />
-
-            </form>
 
             <p>
                 Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
+            </form>
+
         </>
     )
 }

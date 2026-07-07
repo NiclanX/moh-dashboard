@@ -51,7 +51,7 @@ function SignUp() {
     return
   }
 
-  // Optional profile table insert
+  
   if (data.user) {
 
     const { error: profileError } = await supabase
@@ -123,11 +123,11 @@ function SignUp() {
 
   <input type="submit" value="Sign Up" />
 
-</form>
-
       <p>
         Already have an account? <Link to="/login">Log In</Link>
       </p>
+</form>
+
     </>
   )
 }

@@ -31,8 +31,8 @@ function Dashboard() {
 
   return (
     <>
-      <h1>Welcome Back {thisUser.name}</h1>
-      <p>{thisUser.id} is logged in</p>
+      <h1>Welcome Back {thisUser?.name}</h1>
+      <p>{thisUser?.id} is logged in</p>
       <div>Dashboard</div>
       <button onClick={signout}>SIgn Out Now!</button>
     </>
