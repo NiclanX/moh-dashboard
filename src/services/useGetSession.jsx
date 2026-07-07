@@ -17,7 +17,7 @@ export default function SessionProvider({children}) {
             const { data, error } = await supabase.auth.getUser();
 
             if (error) {
-                console.error(error);
+                console.error("User not logged in");
             }
 
             setUser(data.user);
