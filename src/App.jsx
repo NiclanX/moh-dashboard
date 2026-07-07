@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import './styles/responsive.css'
 import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import Dashboard from './Components/Dashboard'
