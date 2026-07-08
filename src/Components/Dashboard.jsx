@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import useGetThisUser from '../services/useGetThisUser'
+import { use } from 'react'
 
 function Dashboard() {
 
   const navigate = useNavigate()
   const { thisUser, loading } = useGetThisUser()
 
-  if (loading) {
-    return <h1>Loading...1</h1>
-  }
 
   async function signOut() {
     const { error } = await supabase.auth.signOut()
@@ -22,13 +20,11 @@ function Dashboard() {
     navigate('/login')
   }
 
-  if (loading || !thisUser) {
-  return <h1>Loading...2</h1>
-}
 
   return (
-    <>
+    <>{ loading ? <div>Loading Dashboard . . .</div> :
       <div className="placeholde">
+        <h1>Dashboard Page</h1>
         <h1>Hi {thisUser.name}, welcome back</h1>
         <h2>User ID</h2>
         <p>{thisUser.id}</p>
@@ -37,6 +33,7 @@ function Dashboard() {
           Sign Out
         </button>
       </div>
+      }
     </>
   )
 }

@@ -17,7 +17,8 @@ export default function SessionProvider({children}) {
             const { data, error } = await supabase.auth.getUser();
 
             if (error) {
-                console.error("User not logged in");
+                setLoading(false)
+                return {error}
             }
 
             setUser(data.user);
@@ -45,9 +46,21 @@ export default function SessionProvider({children}) {
 
     }, []);
 
+   
+    async function signout() {
+
+        try {
+            const {error} = await supabase.auth.signOut()
+        } catch (error) {
+            console.log(error);
+            
+        }
+        
+    }
+
 
     return (
-        <sessionContext.Provider value={{user, loading}}>
+        <sessionContext.Provider value={{user, loading, signout}}>
             {children}
         </sessionContext.Provider>
     );

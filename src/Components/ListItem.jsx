@@ -1,16 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { FaHome } from "react-icons/fa";
+import { Link, NavLink } from 'react-router-dom'
+import { FaHome, FaCheck } from "react-icons/fa";
+import './ListItem.css'
 
-function ListItem({ name, to }) {
-    return (
-        <Link to={to}>
-            <div>
-                <FaHome />
+function ListItem({ name, to, func, compon }) {
 
-                <li>{name} </li>
+    if (!to) {
+
+        return (
+            <Link to={to}>
+            <div className="listitem" onClick={func}>
+                {compon}
+                <p>{name}</p>                
             </div>
-        </Link>
+         </Link>
+        )
+        
+    }
+
+    return (
+       <NavLink to={to}>
+            <div className="listitem" onClick={func}>
+                {compon}
+                <p>{name}</p>                
+            </div>
+       </NavLink>
+     
     )
 }
 

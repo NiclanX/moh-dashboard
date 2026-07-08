@@ -1,0 +1,63 @@
+.listitem{
+   display: flex;
+    padding: 10px;
+    margin: 10px;
+    transition: all ease 0.3s;
+    border-radius: 10px;
+    gap: 10px;
+    font-size: 1.2rem;
+    background-color: #ffffff00;
+}
+
+.sidebartop{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid var(--moh_green);
+    height: 82px;
+    
+}
+
+input[type='search'] {
+    position: relative;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.close {
+    width: 78px;
+ 
+}
+
+.close .sidebartop> h3 {
+    display: none;
+}
+
+
+p {
+    display: block;
+}
+
+.close > a .listitem> p {
+    display: none;
+}
+
+
+aside > :last-child {
+    
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+aside a.active .listitem {
+    background-color: var(--moh_green);
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.sidehead{
+    margin: 20px;
+}
