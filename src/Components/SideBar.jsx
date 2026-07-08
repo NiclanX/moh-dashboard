@@ -17,16 +17,15 @@ function SideBar({thisUser}) {
     <>
     <h3>Hi {thisUser?.name} welcome back</h3>
 
-    <ul className='side-list'>
+    {/* <ul className='side-list'>
         <ListItem name={'Dashboard'} to={'/'}/>
         <ListItem name={'User Management'} to={'/login'}/>
         <ListItem name={'Application Review'} to={'/'}/>
-
     </ul>
 
     <button onClick={()=> {
         signout()
-    }}>Sign Out</button>
+    }}>Sign Out</button> */}
     </>
   )
 }

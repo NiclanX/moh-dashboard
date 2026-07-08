@@ -6,6 +6,8 @@ import SignUp from './Components/SignUp'
 import Dashboard from './Components/Dashboard'
 import ProtectedRoute from './services/ProtectedRoute'
 import NoWhere from './Components/NoWhere'
+import MainLayout from './Components/MainLayout'
+import UsersPage from './Components/UsersPage'
 
 
 
@@ -14,11 +16,12 @@ import NoWhere from './Components/NoWhere'
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter>     
       <Routes>        
         <Route path='/login' element={<LogIn/>} />
         <Route path='/signup' element={<SignUp/>} />        
-        <Route path='/' element={<ProtectedRoute> <Dashboard/></ProtectedRoute>} />        
+        <Route path='/users' element={<UsersPage/>} />        
+        <Route path='/' element={<Dashboard/>} />        
         <Route path='*' element={<NoWhere/>}/>         
       </Routes>
     </BrowserRouter>

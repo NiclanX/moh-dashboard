@@ -4,7 +4,11 @@ import { sessionContext } from "../services/useGetSession";
 
 function ProtectedRoute({ children }) {
 
-    const { user } = useContext(sessionContext);
+    const { user, loading } = useContext(sessionContext);
+
+    if (loading) {
+        return <div>Loading . .  .</div>
+    }
 
     if (!user) {
         return <Navigate to="/login" replace />;

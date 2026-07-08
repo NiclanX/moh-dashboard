@@ -8,7 +8,7 @@ function Dashboard() {
   const { thisUser, loading } = useGetThisUser()
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <h1>Loading...1</h1>
   }
 
   async function signOut() {
@@ -23,12 +23,12 @@ function Dashboard() {
   }
 
   if (loading || !thisUser) {
-  return <h1>Loading...</h1>
+  return <h1>Loading...2</h1>
 }
 
   return (
     <>
-      <div className="placeholder">
+      <div className="placeholde">
         <h1>Hi {thisUser.name}, welcome back</h1>
         <h2>User ID</h2>
         <p>{thisUser.id}</p>
