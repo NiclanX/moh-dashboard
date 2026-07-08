@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import { sessionContext } from '../services/useGetSession'
@@ -22,11 +22,11 @@ function SignUp() {
     return <h1>Loading...</h1>
   }
 
+ 
   if (user) {
-    return <Navigate to="/" replace />
+    // console.log('user active');
+    return <Navigate to={'/'} replace/>
   }
-
-
 
 
  async function onSubmit(formData) {
@@ -72,10 +72,11 @@ function SignUp() {
       console.log(profileError.message)
       return
     }
+
+    navigate('/')
   }
-
-
-  navigate("/")
+ 
+  
 }
 
   return (

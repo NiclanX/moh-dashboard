@@ -64,6 +64,12 @@ body {
   --sidbar_width: 260px;
 }
 
+.navbar{
+  width: 100%;
+  background-color: red;
+  height: 60px;
+}
+
 form{
   width: 40%;
   background-color: var(--moh_yellow);
