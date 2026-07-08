@@ -13,7 +13,7 @@ import { sessionContext } from '../services/useGetSession';
 
 function SideBar() { 
 
-  const [opebar, setOpebar] = useState(true);
+  const [openbar, setOpenbar] = useState(true);
   
   const {thisUser, loading } = useGetThisUser();
 
@@ -26,20 +26,20 @@ function SideBar() {
     alert('Logging out now')
   }
 
-  const size = 26;
+  const size = 20;
 
   const {signout} = useContext(sessionContext)
 
 
   return (
     <>
-    <aside className={opebar ? 'sidebar' : 'sidebar close'}>
+    <aside className={openbar ? 'sidebar' : 'sidebar close'}>
       <div className="sidebartop">
         <h3 className='sidehead'>{thisUser?.name}</h3>
-        {opebar ? <FaChevronLeft size={24} onClick={()=>{
-          setOpebar(!opebar)
+        {openbar ? <FaChevronLeft size={24} onClick={()=>{
+          setOpenbar(!openbar)
         }}/> : <FaChevronRight size={24} onClick={()=>{
-          setOpebar(!opebar)
+          setOpenbar(!openbar)
         }}/>}
       </div>
       <ListItem name={'Dashboard'} to={'/'} compon={<FaHome size={size}/>}/>

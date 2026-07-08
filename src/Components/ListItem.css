@@ -1,7 +1,7 @@
 .listitem{
    display: flex;
     padding: 10px;
-    margin: 10px;
+    margin: 2px 16px;
     transition: all ease 0.3s;
     border-radius: 10px;
     gap: 10px;
@@ -17,18 +17,21 @@
     padding: 12px;
     border-bottom: 1px solid var(--moh_green);
     height: 82px;
-    
+    margin-bottom: 20px;
 }
 
 input[type='search'] {
-    position: relative;
-    margin-right: auto;
+    width: 100%;
     border-radius: 10px;
 }
 
 .close {
     width: 78px;
  
+}
+
+.listname {
+    font-size: 1rem;
 }
 
 .close .sidebartop> h3 {
@@ -60,4 +63,8 @@ aside a.active .listitem {
 
 .sidehead{
     margin: 20px;
+}
+
+.profile-head {
+    margin-bottom: 0px;
 }

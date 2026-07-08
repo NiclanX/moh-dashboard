@@ -11,7 +11,7 @@ function ListItem({ name, to, func, compon }) {
             <Link to={to}>
             <div className="listitem" onClick={func}>
                 {compon}
-                <p>{name}</p>                
+                <p  className='listname'>{name}</p>                
             </div>
          </Link>
         )
@@ -22,7 +22,7 @@ function ListItem({ name, to, func, compon }) {
        <NavLink to={to}>
             <div className="listitem" onClick={func}>
                 {compon}
-                <p>{name}</p>                
+                <p className='listname'>{name}</p>                
             </div>
        </NavLink>
      
