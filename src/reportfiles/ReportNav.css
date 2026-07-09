@@ -1,0 +1,18 @@
+.reportNav{
+    /* background-color: Red; */
+    display: flex;
+    margin: 20px 0px;
+    padding: 8px;
+    gap: 30px;
+    align-items: center;
+}
+
+.reportNav> .active> .navItem{
+    border-bottom: 1px solid var(--moh_green);
+    width: 100px;
+    text-align: center;
+    padding: 10px 0px;
+    font-weight: bold;
+    
+}
+

@@ -7,6 +7,7 @@
     gap: 10px;
     font-size: 1.2rem;
     background-color: #ffffff00;
+    justify-content: flex-start;
 }
 
 .sidebartop{
@@ -18,6 +19,14 @@
     border-bottom: 1px solid var(--moh_green);
     height: 82px;
     margin-bottom: 20px;
+}
+
+.sidehead{
+    margin: 20px;
+}
+
+.close>.sidebartop {
+    justify-content: center;
 }
 
 input[type='search'] {
@@ -47,6 +56,10 @@ p {
     display: none;
 }
 
+.close > a .listitem {
+    justify-content: center;
+}
+
 
 aside > :last-child {
     
@@ -61,9 +74,7 @@ aside a.active .listitem {
 }
 
 
-.sidehead{
-    margin: 20px;
-}
+
 
 .profile-head {
     margin-bottom: 0px;

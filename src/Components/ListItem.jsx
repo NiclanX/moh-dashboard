@@ -8,7 +8,7 @@ function ListItem({ name, to, func, compon }) {
     if (!to) {
 
         return (
-            <Link to={to}>
+        <Link to={to}>
             <div className="listitem" onClick={func}>
                 {compon}
                 <p  className='listname'>{name}</p>                

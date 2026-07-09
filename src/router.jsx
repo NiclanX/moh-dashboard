@@ -8,6 +8,9 @@ import NoWhere from "./Components/NoWhere";
 import ProtectedRoute from "./services/ProtectedRoute";
 import ApplicationsPage from "./Components/ApplicationsPage";
 import ProfilePage from "./Components/ProfilePage";
+import AboutPage from "./Components/AboutPage";
+import ReportsPage from "./Components/ReportsPage";
+import ReportTest from "./Components/ReportTest";
 
 
 export const router = createBrowserRouter(
@@ -17,12 +20,19 @@ export const router = createBrowserRouter(
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="*" element={<NoWhere />} />
+                <Route path="about" element={<AboutPage/>} />
+
             </Route>
             <Route path="/" element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
+
                 <Route index element={<Dashboard />} />
                 <Route path='applications' element={<ApplicationsPage/>} />
                 <Route path="users" element={<UsersPage />} />
                 <Route path="users/:id" element={<ProfilePage/>}/>
+                <Route path="reports" element={<ReportsPage/>}>
+                    <Route index element={<ReportTest/>}/>
+                </Route>
+                
             </Route>
         </>
     )

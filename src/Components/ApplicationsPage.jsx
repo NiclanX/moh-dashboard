@@ -2,7 +2,7 @@ import React from 'react'
 
 function ApplicationsPage() {
   return (
-    <div>ApplicationsPage</div>
+    <h1>Applications Page</h1>
   )
 }
 

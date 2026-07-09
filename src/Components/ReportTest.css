@@ -1,0 +1,9 @@
+.report{
+    margin-top: 20px;
+    font-weight: bold;
+    border: solid 1px var(--moh_green);
+   
+    padding: 12px 8px;
+    max-width: fit-content;
+    cursor: pointer;
+}

@@ -25,10 +25,6 @@ function Dashboard() {
     <>{ loading ? <div>Loading Dashboard . . .</div> :
       <div className="placeholde">
         <h1>Dashboard Page</h1>
-        <h1>Hi {thisUser.name}, welcome back</h1>
-        <h2>User ID</h2>
-        <p>{thisUser.id}</p>
-
         <button onClick={signOut}>
           Sign Out
         </button>

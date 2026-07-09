@@ -56,7 +56,7 @@ function LogIn() {
     return (
         <>
             <form onSubmit={handleLogin}>
-                <img style={{width: '80px', borderRadius: '50%'}} src={logo} alt="Moh Logo" />
+                <img style={{width: '120px', marginBottom: '40px 0px'}} src={logo} alt="Moh Logo" />
                 <h1>Log In</h1>
                
                 <input
