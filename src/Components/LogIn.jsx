@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import { sessionContext } from '../services/useGetSession'
 import { ToastContainer, toast } from 'react-toastify';
+import logo from '../assets/logo.svg'
 
 
 function LogIn() {
@@ -55,6 +56,7 @@ function LogIn() {
     return (
         <>
             <form onSubmit={handleLogin}>
+                <img style={{width: '80px', borderRadius: '50%'}} src={logo} alt="Moh Logo" />
                 <h1>Log In</h1>
                
                 <input

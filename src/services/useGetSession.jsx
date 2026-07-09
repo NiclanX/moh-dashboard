@@ -3,7 +3,7 @@ import supabase from "./Supabase";
 
 export const sessionContext = createContext();
 
-export default function SessionProvider({children}) {
+export default function SessionProvider({ children }) {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ export default function SessionProvider({children}) {
 
             if (error) {
                 setLoading(false)
-                return {error}
+                return { error }
             }
 
             setUser(data.user);
@@ -46,21 +46,19 @@ export default function SessionProvider({children}) {
 
     }, []);
 
-   
+
     async function signout() {
 
-        try {
-            const {error} = await supabase.auth.signOut()
-        } catch (error) {
-            console.log(error);
-            
-        }
-        
+        const { error } = await supabase
+        .auth
+        .signOut()
+
+        console.log(error);
     }
 
 
     return (
-        <sessionContext.Provider value={{user, loading, signout}}>
+        <sessionContext.Provider value={{ user, loading, signout }}>
             {children}
         </sessionContext.Provider>
     );
