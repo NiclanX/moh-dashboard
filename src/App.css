@@ -5,7 +5,7 @@
 *{
   margin:  0px;
   box-sizing: border-box;
-  font-family: poppins;
+  font-family: Poppins, arial;
 }
 
 .dashboard{
@@ -161,6 +161,20 @@ input[type='Submit'] {
 button {
   margin: 10px;
   min-width: 80px;
+}
+
+
+.pageContainer{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+
+.NoPage{
+   
+  padding: 10px;
 }
 
 

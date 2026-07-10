@@ -1,11 +1,28 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+
+
 
 function NoWhere() {
+
+  const { pathname } = useLocation()
+  
+  if (pathname.includes('reports')) {
+    return (
+      <div className="pageContainer">
+
+        <div className="NoPage">
+          <h1>Comming Soon 📈</h1>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="404">
-      <h1>Nothing to See here</h1>
-      <NavLink to={'/login'}> Log In</NavLink>
+    <div className="pageContainer">
+      <div className="NoPage">
+        <h1>Comming Soon 😅</h1>
+      </div>
     </div>
   )
 }

@@ -3,16 +3,26 @@
     display: flex;
     margin: 20px 0px;
     padding: 8px;
-    gap: 30px;
+    gap: 40px;
     align-items: center;
+    justify-content: space-around;
 }
 
 .reportNav> .active> .navItem{
-    border-bottom: 1px solid var(--moh_green);
-    width: 100px;
-    text-align: center;
-    padding: 10px 0px;
+    border-bottom: 2px solid var(--moh_green);
+    /* border-right: 2px solid var(--moh_green);
+    border-radius: 10px; */
+    text-align: center;        
+    color: var(--moh_green);
     font-weight: bold;
     
+}
+
+.navItem {
+    min-width: 80px;
+    padding: 10px;
+    transition: all ease 0.2s;
+    text-align: center;
+    border-bottom: 2px solid #ffffff00;
 }
 

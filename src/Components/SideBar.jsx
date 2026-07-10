@@ -48,7 +48,7 @@ function SideBar() {
         <ListItem name={'Applications'} to={'applications'} compon={<FaFile size={size} />} />
         <ListItem name={'Reports'} to={'reports'} compon={<HiDocumentReport size={size} />} />
         <ListItem name={'Settings'} to={'user'} compon={<IoMdSettings size={size} />} />
-        <ListItem name={'Whats New'} compon={<FaInfoCircle size={size} />} />
+        <ListItem name={'Whats New'} to={'info'} compon={<FaInfoCircle size={size}/>} />
         <ListItem name={'Sign Out'} compon={<FaSignInAlt size={size} />} func={signout} />
       </aside>
 

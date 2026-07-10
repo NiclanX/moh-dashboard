@@ -4,7 +4,7 @@ import './ReportNav.css'
 
 function ReportNavItem({ name, to }) {
     return (
-        <NavLink to={to}>
+        <NavLink to={to} end>
             <div className="navItem">
                 <p>
                     {name}

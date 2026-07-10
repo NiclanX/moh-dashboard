@@ -16,23 +16,25 @@ import ReportTest from "./Components/ReportTest";
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <>
+        {/* Routes Accesible outside of app */}
             <Route>
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="*" element={<NoWhere />} />
                 <Route path="about" element={<AboutPage/>} />
-
             </Route>
+        
+        {/* Routes Accessible inside of app */}
             <Route path="/" element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
-
+        
                 <Route index element={<Dashboard />} />
                 <Route path='applications' element={<ApplicationsPage/>} />
                 <Route path="users" element={<UsersPage />} />
                 <Route path="users/:id" element={<ProfilePage/>}/>
                 <Route path="reports" element={<ReportsPage/>}>
                     <Route index element={<ReportTest/>}/>
+                    <Route path="*" element={<NoWhere />} />
                 </Route>
-                
+                <Route path="*" element={<NoWhere />} />                
             </Route>
         </>
     )
