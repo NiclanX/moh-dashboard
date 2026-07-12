@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import supabase from '../services/Supabase';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 
 function ProfilePage() {
@@ -39,13 +40,17 @@ function ProfilePage() {
         return <div>loading .. .</div>
     }
 
+    const iconSize = 24
 
 
     return (
         <>
-            <h1 className='profile-head'>{profile.name} {profile.surname}</h1> 
-            <p>{profile.gender}</p>
-            <p>{profile.email}</p>
+            <h1 className='profile-head'>{profile.name} {profile.surname}</h1>
+            <FaEdit size={iconSize} onClick={()=>confirm('You would like to edit this record?')} color='green'/>
+            <FaTrashAlt size={iconSize} color='green' />
+            <p>User Role: <strong>{profile.role.charAt(0).toUpperCase() + profile.role.slice(1).toLowerCase()}</strong></p>
+            <p>Gender: {profile.gender}</p>
+            <p>Email: {profile.email}</p>
         </>
     )
 }

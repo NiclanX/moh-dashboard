@@ -25,23 +25,10 @@
   justify-content: center;
 }
 
-
-
-
-
-
-
 ul {
   padding-left: 0;
   margin-left: 0;
 }
-
-
-
-
-
-
-
 
 .main {
   position: absolute;
@@ -49,7 +36,6 @@ ul {
   right: 0px;
   height: 100vh;
   background-color: #fff;
-  /* padding: 20px; */
   
 }
 
@@ -93,7 +79,7 @@ body {
   flex-direction: column;
 }
 
-form{
+.Inform{
   width: 40%;
   background-color: var(--moh_yellow);
   padding: 20px;
@@ -147,7 +133,10 @@ input, select {
   width: 80%;
   margin-bottom: 20px;
   border: none;
+  
 }
+
+
 
 input[type='Submit'] {
 
@@ -157,6 +146,8 @@ input[type='Submit'] {
   border: none;
   cursor: pointer;
 }
+
+
 
 button {
   margin: 10px;

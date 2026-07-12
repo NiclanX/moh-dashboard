@@ -1,5 +1,6 @@
 .reportNav{
     /* background-color: Red; */
+
     display: flex;
     margin: 20px 0px;
     padding: 8px;
@@ -19,7 +20,7 @@
 }
 
 .navItem {
-    min-width: 80px;
+    /* background-color: red; */
     padding: 10px;
     transition: all ease 0.2s;
     text-align: center;

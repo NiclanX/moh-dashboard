@@ -3,10 +3,11 @@ import useGetThisUser from '../services/useGetThisUser'
 import supabase from '../services/Supabase';
 import ListItem from './ListItem';
 import { useNavigate } from 'react-router-dom';
-import { FaAppStore, FaChevronLeft, FaChevronRight, FaFile, FaHome, FaInfo, FaInfoCircle, FaSignInAlt, FaUser } from 'react-icons/fa';
+import { FaAppStore, FaBell, FaChevronLeft, FaChevronRight, FaClipboardList, FaFile, FaHome, FaInfo, FaInfoCircle, FaSignInAlt, FaUser, FaUserFriends } from 'react-icons/fa';
 import { HiDocumentReport } from "react-icons/hi";
 import { IoMdSettings } from "react-icons/io";
 import { sessionContext } from '../services/useGetSession';
+import Roles from './Roles';
 
 
 
@@ -14,29 +15,26 @@ import { sessionContext } from '../services/useGetSession';
 function SideBar() {
 
   const [openbar, setOpenbar] = useState(true);
-
   const { thisUser, loading } = useGetThisUser();
+  const { signout } = useContext(sessionContext)
 
   if (loading) {
-    <p>Loading ... </p>
+   return <p>Loading ... </p>
   }
 
+  
 
-  function name() {
-    alert('Logging out now')
-  }
 
   const size = 20;
 
-  const { signout } = useContext(sessionContext)
 
-  
+
 
   return (
     <>
       <aside className={openbar ? 'sidebar' : 'sidebar close'}>
         <div className="sidebartop">
-          <h3  className='sidehead'>{thisUser?.name}</h3>
+          <h3 className='sidehead'>{thisUser?.name}</h3>
           {openbar ? <FaChevronLeft size={24} onClick={() => {
             setOpenbar(!openbar)
           }} /> : <FaChevronRight size={24} onClick={() => {
@@ -44,11 +42,16 @@ function SideBar() {
           }} />}
         </div>
         <ListItem name={'Dashboard'} to={'/'} compon={<FaHome size={size} />} />
-        <ListItem name={'Users'} to={'users'} compon={<FaUser size={size} />} />
-        <ListItem name={'Applications'} to={'applications'} compon={<FaFile size={size} />} />
-        <ListItem name={'Reports'} to={'reports'} compon={<HiDocumentReport size={size} />} />
-        <ListItem name={'Settings'} to={'user'} compon={<IoMdSettings size={size} />} />
-        <ListItem name={'Whats New'} to={'info'} compon={<FaInfoCircle size={size}/>} />
+          <Roles user={[thisUser?.role]}>
+            <ListItem name={'Users'} to={'users'} compon={<FaUserFriends size={size} />} />
+            <ListItem name={'My Profile'} to={'myprofile'} compon={<FaUser size={size} />} />
+            <ListItem name={'My Applications'} to={'myapplications'} compon={<FaFile size={size} />} />
+            <ListItem name={'All Applications'} to={'applications'} compon={<FaClipboardList size={size} />} />
+          </Roles>
+          <ListItem name={'Notifications'} to={'notifications'} compon={<FaBell size={size} />} />
+          <ListItem name={'Reports'} to={'reports'} compon={<HiDocumentReport size={size} />} />
+          <ListItem name={'Settings'} to={'settings'} compon={<IoMdSettings size={size} />} />
+          <ListItem name={'Whats New'} to={'info'} compon={<FaInfoCircle size={size} />} />
         <ListItem name={'Sign Out'} compon={<FaSignInAlt size={size} />} func={signout} />
       </aside>
 
