@@ -11,22 +11,55 @@
     left: 0;
     transition: all ease 1s;
     background-color: rgba(0, 0, 0, 0.075);
+    
 }
 
 
 .userForm{
-    position: absolute;
-    width: 40%;
+    position: relative;
+    width: 50%;
     background-color: var(--moh_yellow);
     border-radius: 8px;
+    padding: 10px;
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   flex-wrap: wrap;
+    
+}
+
+.userForm, input, select {
+    border-radius: 8px;
+    
+}
+
+.userForm> select {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.userForm> label{
+    align-self: flex-start;
+    margin-top: 10px;
+    
+}
+
+.userForm> input[type='submit']{
+    padding: 10px;
+}
+
+.lock {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .formClose{
-    transform: translate(50%);
+    transform: translate(100%);
     backdrop-filter: blur(0px);
     transition: all ease 1s;
     background-color: rgba(0, 0, 0, 0);
@@ -34,6 +67,21 @@
 
 .user:focus {
   background-color: #ffffff !important;
+  
 }
 
+.names {
+    
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.user {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    margin-bottom: 14px;
+}
 

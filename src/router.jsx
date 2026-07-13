@@ -12,6 +12,7 @@ import AboutPage from "./Components/AboutPage";
 import ReportsPage from "./Components/ReportsPage";
 import ReportTest from "./Components/ReportTest";
 import SettingsPage from "./pages/SettingsPage";
+import MyApplicationsPage from "./Components/MyApplicationsPage";
 
 let user = ['employee']
 
@@ -31,6 +32,7 @@ export const router = createBrowserRouter(
         
                 <Route index element={<Dashboard />} />
                 <Route path='applications' element={<ApplicationsPage/>} />
+                <Route path='myapplications' element={<MyApplicationsPage/>} />
                 <Route path="users" element={<UsersPage />} />
                 <Route path="users/:id" element={<ProfilePage/>}/>
                 <Route path="settings" element={<SettingsPage/>}>

@@ -96,6 +96,13 @@ body {
   
 }
 
+.Inform> input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0;
+}
+
 .top {
   display: flex;
   justify-content: space-around;
@@ -111,7 +118,8 @@ li {
   background-color: rgb(221, 38, 38);
   border: none;
   color: #ffffff;
-  padding: 6px 0px;
+  padding:10px;
+  border-radius: 8px;
 }
 
 h1{
@@ -128,13 +136,13 @@ h3 {
   margin-bottom: 20px;
 }
 
-input, select {
+/* input, select {
   padding: 10px;
   width: 80%;
   margin-bottom: 20px;
   border: none;
-  
-}
+}   */
+
 
 
 
@@ -149,10 +157,7 @@ input[type='Submit'] {
 
 
 
-button {
-  margin: 10px;
-  min-width: 80px;
-}
+
 
 
 .pageContainer{

@@ -3,6 +3,7 @@ import DataTable from 'react-data-table-component';
 import supabase from '../services/Supabase';
 import { Navigate, useNavigate } from 'react-router-dom';
 import UserForm from './UserForm';
+import MohButton from './MohButton';
 
 
 
@@ -50,6 +51,8 @@ function UsersPage() {
 
   }, [])
 
+  const [openForm, setOpenForm] = useState(false)
+
   if (loading) {
     return <div>loading...</div>
   }
@@ -63,14 +66,16 @@ const filteredUsers = users.filter((user) => {
 })
 
 
+
+
   return (
 
     <>
-      <UserForm/>
+      <UserForm opener={openForm} onclick={() => setOpenForm(false)}/>
     <div>
       <h1>Users Page</h1>
-      <button>Add User</button>
-      <input type="search" name="" id="" placeholder='John Doe' value={search} onChange={(e) => setSearch(e.target.value)} />
+      <MohButton text={'Add User'} onClick={()=>{setOpenForm(prev=>!prev)}} />
+      <input type="search" name="" id="" placeholder='John Doe' value={search} onChange={(e) => setSearch(e.target.value) } style={{padding: '12px', marginBottom: '10px', border: 'none'}} />
       <DataTable
         columns={columns}
         data={filteredUsers}

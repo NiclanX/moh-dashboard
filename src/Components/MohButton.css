@@ -1,0 +1,16 @@
+.mohbutton {
+    padding: 10px;
+    border: none;
+    background-color: var(--moh_green);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.danger {
+    background-color: #f51000ec;
+    color: rgb(35, 35, 35);
+    
+}

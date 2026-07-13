@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import supabase from '../services/Supabase'
 import useGetThisUser from '../services/useGetThisUser'
 import { use } from 'react'
+import MohButton from './MohButton'
 
 function Dashboard() {
 
@@ -25,6 +26,8 @@ function Dashboard() {
     <>{ loading ? <div>Loading Dashboard . . .</div> :
       <div className="placeholde">
         <h1>Dashboard Page</h1>
+        {/* <MohButton text={'Moh Button'} />
+        <MohButton text={'Do something Dangerous '}  danger /> */}
         <button onClick={signOut}>
           Sign Out
         </button>
