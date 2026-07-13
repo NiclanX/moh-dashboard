@@ -20,6 +20,8 @@ function UserForm({ opener, onclick }) {
 
 
     const testsub = async (form) => {
+        console.log(form);
+        
         if (form.password != form.confirmpassword) {
             notify('Passwords Do Not Match');
             return
@@ -34,7 +36,7 @@ function UserForm({ opener, onclick }) {
                     name: form.name,
                     surname: form.surname,
                     gender: form.gender,
-                    phone_number: form.phone,
+                    phone: form.phone,
                     role: form.role
                 }
             }
@@ -64,9 +66,7 @@ function UserForm({ opener, onclick }) {
             <form className="userForm" onSubmit={handleSubmit(testsub)} >
                 <div className="lock">
                     <FaWindowClose size={24} onClick={onclick} />
-                    <ToastContainer
-                        autoClose={1500}
-                        position='bottom-right'
+                    <ToastContainer autoClose={1500} position='bottom-right'
                     />
                 </div>
                 <div>
@@ -90,9 +90,9 @@ function UserForm({ opener, onclick }) {
                     <option value="other">Other</option>
                 </select>
                 <input placeholder='Email Address' {...register('email', { required: 'First name required' })} type="email" className="user" />
-                <input placeholder='123-456-7890' {...register('phone', { required: 'First name required' })} type="tel" className="user" />
-                <input placeholder='Password' id='password' {...register('password', { required: 'First name required' })} type="password" className="user" />
-                <input placeholder='Confirm Password' id='confirmpassword'  {...register('confirmpassword', { required: 'First name required' })} type="password" className="user" />
+                <input placeholder='1234567890' {...register('phone', { required: 'First name required' })} type="tel" className="user" />
+                <input placeholder='Password' minLength={8} id='password' {...register('password', { required: 'First name required' })} type="password" className="user" />
+                <input placeholder='Confirm Password' minLength={8} id='confirmpassword'  {...register('confirmpassword', { required: 'First name required' })} type="password" className="user" />
 
                 <input type="submit" value="Add User" />
             </form>

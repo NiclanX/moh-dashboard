@@ -42,15 +42,17 @@ function SideBar() {
           }} />}
         </div>
         <ListItem name={'Dashboard'} to={'/'} compon={<FaHome size={size} />} />
-          <Roles user={[thisUser?.role]}>
+          <Roles user={[thisUser?.role]} restrictTo={'admin'} >
             <ListItem name={'Users'} to={'users'} compon={<FaUserFriends size={size} />} />
-            <ListItem name={'My Profile'} to={'myprofile'} compon={<FaUser size={size} />} />
-            <ListItem name={'My Applications'} to={'myapplications'} compon={<FaFile size={size} />} />
             <ListItem name={'All Applications'} to={'applications'} compon={<FaClipboardList size={size} />} />
-          </Roles>
-          <ListItem name={'Notifications'} to={'notifications'} compon={<FaBell size={size} />} />
           <ListItem name={'Reports'} to={'reports'} compon={<HiDocumentReport size={size} />} />
           <ListItem name={'Settings'} to={'settings'} compon={<IoMdSettings size={size} />} />
+          </Roles>
+            <Roles user={[thisUser?.role]} restrictTo={'employee'}>
+              <ListItem name={'My Profile'} to={'myprofile'} compon={<FaUser size={size} />} />
+              <ListItem name={'My Applications'} to={'myapplications'} compon={<FaFile size={size} />} />
+            </Roles>
+          <ListItem name={'Notifications'} to={'notifications'} compon={<FaBell size={size} />} />
           <ListItem name={'Whats New'} to={'info'} compon={<FaInfoCircle size={size} />} />
         <ListItem name={'Sign Out'} compon={<FaSignInAlt size={size} />} func={signout} />
       </aside>

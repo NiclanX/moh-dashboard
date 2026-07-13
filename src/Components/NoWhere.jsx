@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-
+import logo from '../assets/logo_black.svg'
+import cog from '../assets/image.png'
 
 
 function NoWhere() {
@@ -15,6 +16,7 @@ function NoWhere() {
       <div className="pageContainer">
 
         <div className="NoPage">
+          <img src={logo} alt="moh logo" />
           <h1>Comming Soon 📈</h1>
         </div>
       </div>
@@ -24,7 +26,8 @@ function NoWhere() {
       <div className="pageContainer">
 
         <div className="NoPage">
-          <h1>Comming Soon ⚙</h1>
+          <img src={logo} alt="moh logo" />
+          <h1>Comming Soon 🔧</h1>
         </div>
       </div>
     )
@@ -33,7 +36,8 @@ function NoWhere() {
   return (
     <div className="pageContainer">
       <div className="NoPage">
-        <h1>Comming Soon 😅</h1>
+         <img src={cog} alt="moh logo" id='spinner'/>
+        <h1>Comming Soon 🔑</h1>
       </div>
     </div>
   )

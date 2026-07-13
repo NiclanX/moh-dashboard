@@ -1,0 +1,2 @@
+1. Make button component
+2. Make Learning application

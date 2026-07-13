@@ -9,11 +9,11 @@ function ReportsPage() {
         {name: 'General', to: ''},
         {name: 'User', to: 'user'},
         {name: 'Application', to: 'application'},
-        {name: 'Basic', to: 'basic'},
-        {name: 'Gender', to: 'gender'},
-        {name: 'Tasks', to: 'tasks'},
-        {name: 'logs', to: 'logs'},
-        {name: 'Activity', to: 'activity'},
+        {name: 'Report 3', to: 'basicReport'},
+        {name: 'Report 4', to: 'genderReport'},
+        {name: 'Report 4', to: 'tasksReport'},
+        {name: 'Report 6', to: 'logsReport'},
+        {name: 'Report 7', to: 'activityReport'},
 
   ]
 

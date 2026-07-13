@@ -75,7 +75,7 @@ const filteredUsers = users.filter((user) => {
     <div>
       <h1>Users Page</h1>
       <MohButton text={'Add User'} onClick={()=>{setOpenForm(prev=>!prev)}} />
-      <input type="search" name="" id="" placeholder='John Doe' value={search} onChange={(e) => setSearch(e.target.value) } style={{padding: '12px', marginBottom: '10px', border: 'none'}} />
+      <input type="search" name="" id="" placeholder='search' value={search} onChange={(e) => setSearch(e.target.value) } style={{padding: '12px', marginBottom: '10px', border: 'none'}} />
       <DataTable
         columns={columns}
         data={filteredUsers}

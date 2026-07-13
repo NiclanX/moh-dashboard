@@ -8,10 +8,9 @@ function SettingsPage() {
     {name: 'System', to: ''},
     {name: 'User', to: 'user'},
     {name: 'Global', to: 'global'},
-    {name: 'Auth', to: 'auth1'},
-    {name: 'Auth', to: 'auth2'},
-    {name: 'Auth', to: 'auth3'},
-    {name: 'Auth', to: 'auth4'},
+    {name: 'Settings 4', to: 'auth1'},
+    {name: 'Settings 5', to: 'auth2'},
+   
 
   ]
 

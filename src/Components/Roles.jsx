@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Roles({user, children}) {
+function Roles({user, restrictTo, children}) {
 
     
 
 
-if (!user.includes('admin')) return
+if (!user.includes(restrictTo)) return
 
   return (
     children
