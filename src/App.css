@@ -71,7 +71,7 @@ body {
 .sidebar {
 
   transition: all ease 0.2s;
-  width: 300px;
+  width: 260px;
   flex-shrink: 0;
   overflow-y: auto;
   border-right: 1px solid #ddd;

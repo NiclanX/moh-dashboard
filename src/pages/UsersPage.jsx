@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
 import supabase from '../services/Supabase';
 import { Navigate, useNavigate } from 'react-router-dom';
-import UserForm from './UserForm';
-import MohButton from './MohButton';
+import UserForm from '../Components/UserForm'
+import MohButton from '../Components/MohButton';
+
 
 
 

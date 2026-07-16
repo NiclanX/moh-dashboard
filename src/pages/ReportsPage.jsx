@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Nav from './navComponents/Nav'
+import Nav from '../Components/navComponents/Nav'
 
 
 function ReportsPage() {

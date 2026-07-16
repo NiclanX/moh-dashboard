@@ -1,18 +1,18 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import Dashboard from "./Components/Dashboard";
-import UsersPage from "./Components/UsersPage";
+import Dashboard from "./pages/Dashboard";
+import UsersPage from "./pages/UsersPage";
 import MainLayout from "./Components/MainLayout";
 import LogIn from "./Components/LogIn";
 import SignUp from "./Components/SignUp";
 import NoWhere from "./Components/NoWhere";
 import ProtectedRoute from "./services/ProtectedRoute";
-import ApplicationsPage from "./Components/ApplicationsPage";
-import ProfilePage from "./Components/ProfilePage";
-import AboutPage from "./Components/AboutPage";
-import ReportsPage from "./Components/ReportsPage";
-import ReportTest from "./Components/ReportTest";
+import ApplicationsPage from "./pages/ApplicationsPage";
+import ProfilePage from "./pages/ProfilePage";
+import AboutPage from "./pages/AboutPage";
+import ReportsPage from "./pages/ReportsPage";
+import ReportTest from "./components/ReportTest";
 import SettingsPage from "./pages/SettingsPage";
-import MyApplicationsPage from "./Components/MyApplicationsPage";
+import MyApplicationsPage from "./pages/MyApplicationsPage";
 
 let user = ['employee']
 

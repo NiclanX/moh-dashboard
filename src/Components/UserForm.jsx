@@ -82,6 +82,7 @@ function UserForm({ opener, onclick }) {
 
                 <select {...register('role')}>
                     <option value="employee">Employee</option>
+                    <option value="manager">Manager/Supervisor</option>
                     <option value="admin">Administrator</option>
                 </select>
                 <select {...register('gender')}>
