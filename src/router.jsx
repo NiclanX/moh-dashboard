@@ -10,7 +10,7 @@ import ApplicationsPage from "./pages/ApplicationsPage";
 import ProfilePage from "./pages/ProfilePage";
 import AboutPage from "./pages/AboutPage";
 import ReportsPage from "./pages/ReportsPage";
-import ReportTest from "./components/ReportTest";
+import ReportTest from './Components/ReportTest'
 import SettingsPage from "./pages/SettingsPage";
 import MyApplicationsPage from "./pages/MyApplicationsPage";
 
